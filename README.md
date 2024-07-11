@@ -1,3 +1,13 @@
+## Home Products Page
+
+![image](https://github.com/user-attachments/assets/da610ebb-9cca-4a2b-b32d-ec3002944366)
+
+## Carts Page
+
+![image](https://github.com/user-attachments/assets/c8966c5c-b831-4b6b-b94c-430a2655d96a)
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

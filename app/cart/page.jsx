@@ -12,7 +12,7 @@ export default function Cart() {
   const cartItems = useSelector((store) => store.cart);
   const subTotal = cartItems.reduce((acc, currentItem) => {
     return acc + currentItem.price * currentItem.qty;
-  }, 0);
+  }, 0).toFixed(2);
 
   return (
     <div className="px-20 py-16">
