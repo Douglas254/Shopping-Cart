@@ -10,7 +10,9 @@ import { useSelector } from "react-redux";
 
 export default function Cart() {
   const cartItems = useSelector((store) => store.cart);
-  console.log(cartItems);
+  const subTotal = cartItems.reduce((acc, currentItem) => {
+    return acc + currentItem.price * currentItem.qty;
+  }, 0);
 
   return (
     <div className="px-20 py-16">
@@ -46,7 +48,7 @@ export default function Cart() {
           <h2 className="text-2xl pb-3">Cart total</h2>
           <div className="flex items-center justify-between border-b border-slate-500 pb-6">
             <span>Subtotal </span>
-            <span>$589</span>
+            <span>${subTotal}</span>
           </div>
           <div className="flex items-center justify-between pb-4 mt-2">
             <span>Tax </span>
