@@ -31,6 +31,8 @@ const cartSlice = createSlice({
     },
     removeFromCart: (state, action) => {
       // Your logic for removeFromCart
+      const cartId = action.payload;
+      return state.filter((item) => item.id !== cartId);
     },
     incrementQty: (state, action) => {
       // Your logic for incrementQty
