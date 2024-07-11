@@ -60,14 +60,14 @@ export default function Cart() {
           </div>
           <div className="flex items-center justify-between pb-4">
             <span>Shipping </span>
-            <span>$10</span>
+            <span>$0</span>
           </div>
           <p className="border-b border-slate-500 pb-6 text-slate-400 font-normal">
             We only charge for shipping when you have over 2kg items
           </p>
           <div className="flex items-center justify-between py-4 font-bold">
             <span>Total </span>
-            <span>$1000</span>
+            <span>${subTotal}</span>
           </div>
           <Link
             href="#"
