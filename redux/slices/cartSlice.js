@@ -36,9 +36,21 @@ const cartSlice = createSlice({
     },
     incrementQty: (state, action) => {
       // Your logic for incrementQty
+      const cartId = action.payload;
+      //   check if the item already exist in cart
+      const existingItem = state.find((item) => item.id === cartId);
+      if (existingItem) {
+        existingItem.qty += 1;
+      }
     },
     decrementQty: (state, action) => {
       // Your logic for decrementQty
+      const cartId = action.payload;
+      //   check if the item already exist in cart
+      const existingItem = state.find((item) => item.id === cartId);
+      if (existingItem && existingItem.qty > 1) {
+        existingItem.qty -= 1;
+      }
     },
   },
 });
