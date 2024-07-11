@@ -1,8 +1,20 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { Minus, Plus, Trash2 } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { removeFromCart } from "@/redux/slices/cartSlice";
+import toast from "react-hot-toast";
 
 export default function CartProduct({ cartItem }) {
+  const dispatch = useDispatch();
+
+  function handleItemDelete(cartId) {
+    dispatch(removeFromCart(cartId));
+    toast.success("Item removed successfully!");
+  }
+
   return (
     <div className="flex items-center justify-between border-b border-slate-400  pb-3 font-semibold text-sm mb-4">
       <div className="flex items-center gap-3">
@@ -28,7 +40,7 @@ export default function CartProduct({ cartItem }) {
       </div>
       <div className="flex items-center gap-2">
         <h4>${cartItem.price}</h4>
-        <button>
+        <button onClick={() => handleItemDelete(cartItem.id)}>
           <Trash2 className="text-red-600 w-5 h-5" />
         </button>
       </div>

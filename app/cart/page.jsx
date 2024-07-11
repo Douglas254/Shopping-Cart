@@ -26,9 +26,13 @@ export default function Cart() {
             <h2 className="uppercase">Price</h2>
           </div>
           <div className="">
-            {cartItems.map((item, i) => {
-              return <CartProduct cartItem={item} key={i} />;
-            })}
+            {cartItems.length > 0 ? (
+              cartItems.map((item, i) => {
+                return <CartProduct cartItem={item} key={i} />;
+              })
+            ) : (
+              <p>No Cart Items</p>
+            )}
           </div>
           {/* COUPON FORM */}
           <div className="flex items-center gap-2 py-8">
